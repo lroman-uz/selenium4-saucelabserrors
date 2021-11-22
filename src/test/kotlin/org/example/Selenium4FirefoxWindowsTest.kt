@@ -1,5 +1,6 @@
 package org.example
 
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.openqa.selenium.WebDriver
@@ -30,6 +31,11 @@ class Selenium4FirefoxWindowsTest {
     @Test
     fun testUserzoom() {
         driver.get("https://www.userzoom.com")
+    }
+
+    @After
+    fun tearDown() {
+        driver.quit()
     }
 
     companion object {

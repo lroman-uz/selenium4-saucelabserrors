@@ -1,5 +1,6 @@
 package org.example
 
+import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.openqa.selenium.MutableCapabilities
@@ -33,6 +34,10 @@ class Selenium4iOSTest {
         driver.get("https://www.userzoom.com")
     }
 
+    @After
+    fun tearDown() {
+        driver.quit()
+    }
 
     companion object {
         private const val SAUCELABS_USERNAME = ""
