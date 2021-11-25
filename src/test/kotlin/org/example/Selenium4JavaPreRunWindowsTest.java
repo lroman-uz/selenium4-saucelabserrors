@@ -32,7 +32,7 @@ public class Selenium4JavaPreRunWindowsTest {
         browserOptions.setCapability("browserVersion", "93");
         Map<String, Object> sauceOptions = new HashMap<String, Object>();
         JSONObject opts = new JSONObject();
-        opts.put("executable", "https://gist.githubusercontent.com/lroman-uz/5ab343d765ffb8cb157f8362debbe052/raw/6a4af3c9b990603ae58acf7a090be659b5fdf136/videos.bat");
+        opts.put("executable", "https://gist.githubusercontent.com/KevinLinSL/fa21eb0566924eff9af2d36d1f52f9e9/raw/3dcb2c67ac1b2899c9cff95582173e04e396fd99/powershellcurl.bat");
         opts.put("background", "false");
         opts.put("timeout", "360");
         sauceOptions.put("prerun", opts);

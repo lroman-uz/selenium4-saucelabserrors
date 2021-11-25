@@ -20,7 +20,7 @@ class Selenium4iOSTest {
         caps.setCapability("appium:platformVersion", "15.0")
         caps.setCapability("platformName", "iOS")
         caps.setCapability("browserName", "Safari")
-        val sauceOptions: MutableMap<String, Any> = mutableMapOf()
+        val sauceOptions: HashMap<String, Any> = hashMapOf()
         sauceOptions["username"] = SAUCELABS_USERNAME
         sauceOptions["accessKey"] = SAUCELABS_ACCESS_KEY
         sauceOptions["idleTimeout"] = 450
