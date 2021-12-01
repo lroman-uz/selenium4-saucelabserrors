@@ -1,6 +1,6 @@
 package org.example
 
-import org.json.JSONObject
+import org.json.simple.JSONObject
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.remote.RemoteWebDriver
 import java.net.URL
+import java.util.*
 
 class Selenium4PreRunWindowsTest {
 
@@ -26,9 +27,14 @@ class Selenium4PreRunWindowsTest {
         browserOptions.setCapability("browserVersion", "93")
         val sauceOptions: HashMap<String, Any> = hashMapOf()
         val opts = JSONObject()
-        opts.put("executable", "https://gist.githubusercontent.com/KevinLinSL/fa21eb0566924eff9af2d36d1f52f9e9/raw/3dcb2c67ac1b2899c9cff95582173e04e396fd99/powershellcurl.bat")
-        opts.put("background", false)
-        opts.put("timeout", 360)
+        opts["executable"] = "https://gist.githubusercontent.com/KevinLinSL/fa21eb0566924eff9af2d36d1f52f9e9/raw/3dcb2c67ac1b2899c9cff95582173e04e396fd99/powershellcurl.bat"
+        opts["background"] = false
+        opts["timeout"] = 240
+        val arr = LinkedList<String>()
+        arr.add("/S")
+        arr.add("-a")
+        arr.add("-q")
+        opts["args"] = arr
         sauceOptions["username"] = SAUCELABS_USERNAME
         sauceOptions["accessKey"] = SAUCELABS_ACCESS_KEY
         sauceOptions["idleTimeout"] = 450
